@@ -1,0 +1,18 @@
+// models/Book.java
+package models;
+
+public class Book{
+    public int id;
+    public String title;
+    public String author;
+    public boolean isLent;
+    public int lentToUserId;
+
+    public Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isLent = false;
+        this.lentToUserId = -1;
+    }
+}
