@@ -1,11 +1,10 @@
-// services/AuthService.java
 package services;
 
 import data.UserDatabase;
 import models.User;
 import java.util.Scanner;
 
-public class AuthService{
+public class AuthService {
     Scanner sc = new Scanner(System.in);
 
     public void register() {
