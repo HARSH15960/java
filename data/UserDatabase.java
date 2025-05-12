@@ -1,8 +1,7 @@
-// data/UserDatabase.java
 package data;
 import models.User;
 
-public class UserDatabase{
+public class UserDatabase {
     public static User[] users = new User[100];
     public static int userCount = 0;
 

@@ -1,5 +1,3 @@
-
-// data/BookDatabase.java
 package data;
 
 import models.Book;
@@ -7,6 +5,7 @@ import models.Book;
 public class BookDatabase {
     public static Book[] books = new Book[200];
     public static int bookCount = 0;
+    public static int nextBookId = 1; // Unique ID tracker
 
     static {
         addCategoryBooks("Fiction", "Author F");
@@ -23,7 +22,8 @@ public class BookDatabase {
 
     private static void addCategoryBooks(String category, String authorPrefix) {
         for (int i = 1; i <= 10; i++) {
-            addBook(new Book(bookCount + 1, category + " Book " + i, authorPrefix + i, category));
+            Book book = new Book(nextBookId++, category + " Book " + i, authorPrefix + i, category);
+            addBook(book);
         }
     }
 
@@ -36,6 +36,19 @@ public class BookDatabase {
             if (books[i].id == id) return books[i];
         }
         return null;
+    }
+
+    public static boolean deleteBook(int id) {
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i].id == id) {
+                for (int j = i; j < bookCount - 1; j++) {
+                    books[j] = books[j + 1];
+                }
+                books[--bookCount] = null;
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void listAvailableBooks() {

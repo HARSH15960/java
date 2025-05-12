@@ -19,7 +19,7 @@ public class Main {
             System.out.println("4. Exit");
             System.out.print("Choose an option: ");
             int choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
@@ -39,7 +39,7 @@ public class Main {
 
                     if (adminUsername.equals("admin") && adminPassword.equals("admin123")) {
                         System.out.println("✅ Admin login successful!");
-                        adminService.showAdminMenu();
+                        adminService.showAdminMenu(); // this method must be updated!
                     } else {
                         System.out.println("❌ Invalid admin credentials.");
                     }
