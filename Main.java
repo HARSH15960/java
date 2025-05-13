@@ -10,7 +10,11 @@ public class Main {
         LibraryService libraryService = new LibraryService();
         AdminService adminService = new AdminService();
 
-        System.out.println("📚 Welcome to BookNest 📚");
+        System.out.println(" DIGITAL LIBRARY ");
+        
+        System.out.println(" Welcome to BookNest ");
+
+        System.out.println(" ACCESS LIBRARY");
 
         while (true) {
             System.out.println("\n1. Register as User");
