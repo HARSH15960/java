@@ -10,7 +10,7 @@ public class Book {
     public boolean isLent;
     public int lentToUserId;
     public String category;
-    public LocalDate lendDate;  // <-- ADD THIS LINE
+    public LocalDate lendDate; 
 
     public Book(int id, String title, String author, String category) {
         this.id = id;
@@ -19,6 +19,6 @@ public class Book {
         this.category = category;
         this.isLent = false;
         this.lentToUserId = -1;
-        this.lendDate = null;  // <-- INITIALIZE TO null
+        this.lendDate = null;  
     }
 }

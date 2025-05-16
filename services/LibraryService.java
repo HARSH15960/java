@@ -12,7 +12,7 @@ public class LibraryService {
 
     public void menu(int userId) {
         while (true) {
-            System.out.println("\n📚 User Dashboard:");
+            System.out.println("\n User Dashboard:");
             System.out.println("1. View Available Books");
             System.out.println("2. Lend a Book");
             System.out.println("3. Return a Book");
@@ -35,7 +35,7 @@ public class LibraryService {
                     }
 
                     if (lentCount >= 3) {
-                        System.out.println("❌ You cannot lend more than 3 books!");
+                        System.out.println(" You cannot lend more than 3 books!");
                         break;
                     }
 
@@ -46,9 +46,9 @@ public class LibraryService {
                     if (book != null && !book.isLent) {
                         book.isLent = true;
                         book.lentToUserId = userId;
-                        System.out.println("✅ Book lent successfully.");
+                        System.out.println(" Book lent successfully.");
                     } else {
-                        System.out.println("❌ Book not available.");
+                        System.out.println(" Book not available.");
                     }
                     break;
 
@@ -65,9 +65,9 @@ public class LibraryService {
                     if (returnBook != null && returnBook.lentToUserId == userId) {
                         returnBook.isLent = false;
                         returnBook.lentToUserId = -1;
-                        System.out.println("✅ Book returned successfully.");
+                        System.out.println(" Book returned successfully.");
                     } else {
-                        System.out.println("❌ Invalid return.");
+                        System.out.println("Invalid return.");
                     }
                     break;
 
@@ -78,7 +78,7 @@ public class LibraryService {
                     System.out.println("Books Lent:");
                     for (Book b : BookDatabase.books) {
                         if (b != null && b.lentToUserId == userId) {
-                            System.out.println("📖 " + b.title + " (" + b.category + ")");
+                            System.out.println(  b.title + " (" + b.category + ")");
                         }
                     }
                     break;
@@ -89,7 +89,7 @@ public class LibraryService {
                     boolean found = false;
                     for (Book b : BookDatabase.books) {
                         if (b != null && b.title.toLowerCase().contains(title)) {
-                            System.out.println("📘 " + b.title + " by " + b.author + (b.isLent ? " (Lent)" : " (Available)"));
+                            System.out.println( b.title + " by " + b.author + (b.isLent ? " (Lent)" : " (Available)"));
                             found = true;
                         }
                     }

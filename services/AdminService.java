@@ -21,7 +21,7 @@ public class AdminService {
             System.out.println("7. Logout");
             System.out.print("Choose an option: ");
             int choice = sc.nextInt();
-            sc.nextLine(); // buffer clear
+            sc.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -52,7 +52,7 @@ public class AdminService {
     }
 
     private void viewAllBooks() {
-        System.out.println("\n📚 All Books:");
+        System.out.println("\n All Books:");
         for (int i = 0; i < BookDatabase.bookCount; i++) {
             Book b = BookDatabase.books[i];
             System.out.println(b.id + ". " + b.title + " by " + b.author + (b.isLent ? " (Lent)" : " (Available)"));
@@ -77,7 +77,7 @@ public class AdminService {
 
         Book newBook = new Book(BookDatabase.nextBookId++, title, author, category);
         BookDatabase.addBook(newBook);
-        System.out.println("✅ Book added successfully!");
+        System.out.println(" Book added successfully!");
     }
 
     private void deleteBook() {
@@ -86,9 +86,9 @@ public class AdminService {
         int id = sc.nextInt();
         boolean deleted = BookDatabase.deleteBook(id);
         if (deleted) {
-            System.out.println("✅ Book deleted.");
+            System.out.println(" Book deleted.");
         } else {
-            System.out.println("❌ Book not found.");
+            System.out.println(" Book not found.");
         }
     }
 
@@ -99,16 +99,16 @@ public class AdminService {
         if (user != null) {
             System.out.println("Found: " + user.name + " | " + user.email);
         } else {
-            System.out.println("❌ User not found.");
+            System.out.println(" User not found.");
         }
     }
 
     private void lentSummary() {
-        System.out.println("📋 Lent Books Summary:");
+        System.out.println(" Lent Books Summary:");
         for (Book b : BookDatabase.books) {
             if (b != null && b.isLent) {
                 User u = UserDatabase.getUserById(b.lentToUserId);
-                System.out.println("📖 " + b.title + " → " + u.name + " (" + u.email + ")");
+                System.out.println( b.title + " → " + u.name + " (" + u.email + ")");
             }
         }
     }

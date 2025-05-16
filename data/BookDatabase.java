@@ -5,7 +5,7 @@ import models.Book;
 public class BookDatabase {
     public static Book[] books = new Book[200];
     public static int bookCount = 0;
-    public static int nextBookId = 1; // Unique ID tracker
+    public static int nextBookId = 1; 
 
     static {
         addCategoryBooks("Fiction", "Author F");

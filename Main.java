@@ -11,10 +11,15 @@ public class Main {
         AdminService adminService = new AdminService();
 
         System.out.println(" DIGITAL LIBRARY ");
+        System.out.println();
         
         System.out.println(" Welcome to BookNest ");
+                System.out.println();
+
 
         System.out.println(" ACCESS LIBRARY");
+               
+
 
         while (true) {
             System.out.println("\n1. Register as User");
@@ -42,10 +47,10 @@ public class Main {
                     String adminPassword = sc.nextLine();
 
                     if (adminUsername.equals("admin") && adminPassword.equals("admin123")) {
-                        System.out.println("✅ Admin login successful!");
-                        adminService.showAdminMenu(); // this method must be updated!
+                        System.out.println(" Admin login successful!");
+                        adminService.showAdminMenu(); 
                     } else {
-                        System.out.println("❌ Invalid admin credentials.");
+                        System.out.println(" Invalid admin credentials.");
                     }
                     break;
                 case 4:
